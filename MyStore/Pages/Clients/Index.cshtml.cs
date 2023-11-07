@@ -32,14 +32,17 @@ namespace MyStore.Pages.Clients
                                 clientInfo.address = reader.GetString(4);
                                 clientInfo.created_at = reader.GetDateTime(5).ToString();
 
+                                // adds object to list
+                                listClients.Add(clientInfo);    
+
                             }
                         }
                     }
                 }
             }
             catch (Exception ex)
-            { 
-
+            {
+                Console.WriteLine("Exception: " + ex.ToString());
             }
 
         }
